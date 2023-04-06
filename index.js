@@ -9,6 +9,9 @@ client.on("connected", () => {
 const configuration = new Configuration({
   apiKey: process.env.SECRET_KEY,
 });
+const USERNAME =process.env.USER_NAME;
+const PASSWORD =process.env.PASS_WORD;
+
 const openai = new OpenAIApi(configuration);
 async function runCompletion(message) {
   const completion = await openai.createCompletion({
@@ -62,6 +65,6 @@ client.on("messageCreate", (message) => {
 });
 
 
-client.login('taqui_imam_786', 'TAQUI7860b');
+client.login(USERNAME,PASSWORD);
 
 
